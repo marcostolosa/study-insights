@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  collector:
+    build: .
+    volumes:
+      - ./oscp_posts.db:/app/oscp_posts.db
+      - ./oscp_analysis.txt:/app/oscp_analysis.txt
+    environment:
+      - REDDIT_CLIENT_ID=${REDDIT_CLIENT_ID}
+      - REDDIT_CLIENT_SECRET=${REDDIT_CLIENT_SECRET}
+      - REDDIT_USER_AGENT=${REDDIT_USER_AGENT}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    command: python oscpInsights.py
+
+  dashboard:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./oscp_posts.db:/app/oscp_posts.db
+      - ./oscp_analysis.txt:/app/oscp_analysis.txt
+    command: streamlit run dashboard.py --server.port 8501 --server.address 0.0.0.0
