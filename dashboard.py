@@ -26,13 +26,15 @@ def main():
     st.dataframe(posts[['title', 'score', 'num_comments', 'created_utc']].head(10))
     
     # Analysis Report
+    st.subheader("AI Analysis Report")
     try:
         with open('oscp_analysis.txt', 'r') as f:
             report = f.read()
-        st.subheader("AI Analysis Report")
-        st.markdown(f"```\n{report}\n```")
+        st.markdown(report)  # Renderiza o relatório em Markdown
     except FileNotFoundError:
         st.warning("Analysis report not found yet")
+    except Exception as e:
+        st.error(f"An error occurred while loading the report: {e}")
 
 if __name__ == '__main__':
     main()
