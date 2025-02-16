@@ -19,7 +19,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('logs/oscp_analysis.log'),
+        logging.FileHandler('../logs/oscp_analysis.log'),
         logging.StreamHandler()
     ]
 )
@@ -38,7 +38,7 @@ class OSCPAnalyzer:
 
     @staticmethod
     def load_config() -> dict:
-        with open('config/config.yaml') as f:
+        with open('../config/config.yaml') as f:
             return yaml.safe_load(f)
 
     def setup_database(self) -> sqlite3.Connection:
@@ -199,7 +199,7 @@ class OSCPAnalyzer:
 
         analysis = self.analyze_content(combined_text)
 
-        with open('reports/oscp_analysis.txt', 'w') as f:
+        with open('../reports/oscp_analysis.txt', 'w') as f:
             if analysis:
                 f.write(analysis)
 
@@ -218,7 +218,7 @@ if __name__ == '__main__':
         logging.info("Generating analysis report...")
         report = analyzer.generate_report()
 
-        logging.info(f"Analysis complete. Results saved to reports/oscp_analysis.txt")
+        logging.info(f"Analysis complete. Results saved to ../reports/oscp_analysis.txt")
         logging.info(f"Metrics: Posts={analyzer.metrics.posts_processed} Comments={analyzer.metrics.comments_analyzed}")
 
     except Exception as e:
