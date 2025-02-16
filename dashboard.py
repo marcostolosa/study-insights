@@ -30,7 +30,7 @@ def main():
     try:
         with open('oscp_analysis.txt', 'r') as f:
             report = f.read()
-        st.markdown(report)  # Renderiza o relatório em Markdown
+        st.markdown(report) 
     except FileNotFoundError:
         st.warning("Analysis report not found yet")
     except Exception as e:

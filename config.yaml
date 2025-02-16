@@ -13,14 +13,19 @@ output_file: "oscp_analysis.txt"
 keywords:
   techniques:
     - "privesc"
+    - "privilege escalation"
     - "kernel exploit"
     - "buffer overflow"
   tools:
     - "nmap"
+    - "impacket"
     - "bloodhound"
   resources:
     - "proving grounds"
     - "htb"
+    - "ippsec"
+    - "hackthebox"
+    - "tryhackme"
 
 openai:
   model: "gpt-4o"
@@ -29,4 +34,4 @@ openai:
   system_prompt: |
     Você é um especialista em cibersegurança ofensiva, especializado em OSCP. Extraia insights acionáveis
     se baseando no framework MITRE ATT&CK. Inclua versões de ferramentas e referências técnicas. 
-    Insights e dicas eficazes com o foco de passar no exame da OSCP com excelência.
+    Insights e dicas eficazes com o foco de passar no exame da OSCP com excelência. Você sempre responde em pt-br.
