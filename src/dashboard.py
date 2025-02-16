@@ -1,9 +1,10 @@
 import streamlit as st
 import sqlite3
 import pandas as pd
+from typing import Tuple
 
-def load_data():
-    conn = sqlite3.connect('oscp_posts.db')
+def load_data() -> Tuple[pd.DataFrame, pd.DataFrame]:
+    conn = sqlite3.connect('data/oscp_posts.db')
     posts = pd.read_sql('SELECT * FROM posts', conn)
     comments = pd.read_sql('SELECT * FROM comments', conn)
     conn.close()
@@ -28,9 +29,9 @@ def main():
     # Analysis Report
     st.subheader("AI Analysis Report")
     try:
-        with open('oscp_analysis.txt', 'r') as f:
+        with open('reports/oscp_analysis.txt', 'r') as f:
             report = f.read()
-        st.markdown(report) 
+        st.markdown(report)
     except FileNotFoundError:
         st.warning("Analysis report not found yet")
     except Exception as e:
