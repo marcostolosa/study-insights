@@ -4,7 +4,7 @@ import pandas as pd
 from typing import Tuple
 
 def load_data() -> Tuple[pd.DataFrame, pd.DataFrame]:
-    conn = sqlite3.connect('data/oscp_posts.db')
+    conn = sqlite3.connect('../data/oscp_posts.db')
     posts = pd.read_sql('SELECT * FROM posts', conn)
     comments = pd.read_sql('SELECT * FROM comments', conn)
     conn.close()
@@ -24,12 +24,12 @@ def main():
     
     # Recent Posts
     st.subheader("Recent Posts")
-    st.dataframe(posts[['title', 'score', 'num_comments', 'created_utc']].head(10))
+    st.dataframe(posts[['title', 'selftext', 'score', 'num_comments', 'created_utc']].head(10))
     
     # Analysis Report
     st.subheader("AI Analysis Report")
     try:
-        with open('reports/oscp_analysis.txt', 'r') as f:
+        with open('../reports/oscp_analysis.txt', 'r') as f:
             report = f.read()
         st.markdown(report)
     except FileNotFoundError:
