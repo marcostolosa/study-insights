@@ -1,14 +1,14 @@
 subreddit: "oscp"
 search_query: "passed"
 database:
-  file: "oscp_posts.db"
+  file: "../data/oscp_posts.db"
   timeout: 10
 post_min_length: 700
 max_pagination: 10
 batch_size: 100
 sort: "top"
 time_filter: "year"
-output_file: "oscp_analysis.txt"
+output_file: "../reports/oscp_analysis.txt"
 
 keywords:
   techniques:
