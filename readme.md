@@ -5,8 +5,6 @@
 
 Uma ferramenta avançada que transforma discussões da comunidade OSCP do Reddit em insights acionáveis usando análise de IA e visualização interativa.
 
-**Demonstração:** [Preview do Dashboard](#dashboard-preview)
-
 ## 📌 Sumário
 - [Funcionalidades](#-funcionalidades)
 - [Tecnologias](#-tecnologias)
@@ -39,6 +37,8 @@ Uma ferramenta avançada que transforma discussões da comunidade OSCP do Reddit
   - 🐳 Pronto para Docker/Kubernetes
   - 🔄 Compatível com CI/CD
 
+**Dashboard:** ![Preview do Dashboard](img/4.PNG)
+![Preview 2](img/5.PNG)
 
 ## 🛠️ Tecnologias
 **Núcleo**  
