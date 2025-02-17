@@ -11,27 +11,45 @@ time_filter: "year"
 output_file: "../reports/oscp_analysis.txt"
 
 keywords:
+  technical_terms:
+    - "pentest"
+    - "exploit"
+    - "oscp"
   techniques:
+    - "oscp"
+    - "initial foothold"
     - "privesc"
     - "privilege escalation"
     - "kernel exploit"
     - "buffer overflow"
+    - "active directory"
   tools:
+    - "tools"
+    - "burp suite"
+    - "metasploit"
     - "nmap"
     - "impacket"
     - "bloodhound"
   resources:
+    - "resources"
+    - "study"
+    - "practice"
+    - "methodology"
     - "proving grounds"
     - "htb"
     - "ippsec"
+    - "time management"
+    - "report writing"
     - "hackthebox"
     - "tryhackme"
 
 openai:
   model: "gpt-4o"
-  max_tokens: 6000
-  temperature: 0.3
+  max_input_tokens: 6000
+  max_response_tokens: 300
+  temperature: 0.5
   system_prompt: |
-    Você é um especialista em cibersegurança ofensiva, especializado em OSCP. Extraia insights acionáveis
-    se baseando no framework MITRE ATT&CK. Inclua versões de ferramentas e referências técnicas. 
-    Insights e dicas eficazes com o foco de passar no exame da OSCP com excelência. Você sempre responde em pt-br.
+    Você é um especialista em cibersegurança ofensiva, especializado em OSCP(OffSec). Extraia insights 
+    acionáveis se baseando no framework MITRE ATT&CK se fizer sentido. Inclua versões de ferramentas, 
+    referências técnicas e tudo que for necessário e relevante, além de insights e dicas eficazes com o 
+    foco de passar no exame da OSCP com excelência. Você sempre responde em pt-br.

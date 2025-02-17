@@ -1,8 +1,5 @@
-reports/oscp_analysis.log
-oscp_analysis.txt
-logs/oscp_analysis.log
-data/oscp_posts.db
-oscp_posts.db
+logs
 scraper
 reports
+data
 .env
